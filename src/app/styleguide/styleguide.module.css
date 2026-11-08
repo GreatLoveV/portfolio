@@ -1,0 +1,104 @@
+.page {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.hero {
+  position: relative;
+  padding-block: var(--space-9) var(--space-8);
+}
+
+.heroNote {
+  margin-top: var(--space-8);
+}
+
+.note {
+  margin-top: var(--space-3);
+}
+
+.block {
+  margin-top: var(--space-8);
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: var(--space-7) var(--grid-gap);
+  margin-top: var(--space-8);
+}
+
+.swatch {
+  height: 7rem;
+  margin-bottom: var(--space-3);
+  border: 1px solid var(--color-line);
+}
+
+.swatchName {
+  font-weight: var(--weight-medium);
+}
+
+.scale {
+  margin-top: var(--space-8);
+}
+
+.scaleRow {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  align-items: baseline;
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-line);
+}
+
+.scaleSample {
+  font-weight: var(--weight-bold);
+  font-stretch: var(--width-heading);
+  letter-spacing: var(--tracking-heading);
+}
+
+.bodySample {
+  margin-top: var(--space-5);
+}
+
+.metaList {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.spaces {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.spaceRow {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  align-items: center;
+}
+
+.spaceBar {
+  display: block;
+  height: var(--space-3);
+  background-color: var(--color-ink);
+}
+
+.motion {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .coverOffset {
+    margin-top: var(--space-10);
+  }
+}
