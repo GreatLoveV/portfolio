@@ -88,6 +88,12 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {

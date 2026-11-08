@@ -1,0 +1,134 @@
+.header {
+  position: relative;
+  z-index: var(--z-nav);
+}
+
+.headerInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+  padding-block: var(--space-5);
+}
+
+.skip {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 1;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-ink);
+  color: var(--color-on-ink);
+  transform: translateY(-200%);
+}
+
+.skip:focus-visible {
+  color: var(--color-on-ink);
+  transform: none;
+}
+
+.name {
+  font-size: var(--text-lead);
+  font-weight: var(--weight-bold);
+  font-stretch: var(--width-heading);
+  letter-spacing: var(--tracking-heading);
+  text-decoration: none;
+}
+
+.navList {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.navLink {
+  display: inline-block;
+  padding-block: var(--space-3);
+  font-size: var(--text-small);
+  text-decoration-color: transparent;
+  transition:
+    color var(--duration-fast) var(--ease-settle),
+    text-decoration-color var(--duration-fast) var(--ease-settle);
+}
+
+.navLink[aria-current='page'] {
+  text-decoration-color: var(--color-ink);
+  text-decoration-thickness: 2px;
+}
+
+.footer {
+  position: relative;
+  border-top: 1px solid var(--color-line);
+}
+
+.footerInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+  padding-block: var(--space-6);
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-size: var(--text-small);
+}
+
+.footerLinks a {
+  display: inline-block;
+  padding-block: var(--space-2);
+}
+
+/* A cover for projects with no image yet: the title, oversized and cut by the frame */
+.block {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--color-ground-raised);
+  color: var(--color-paper);
+  container-type: inline-size;
+}
+
+.block::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/textures/grain.png');
+  background-size: 180px;
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.blockInk {
+  background-color: var(--color-ink);
+  color: var(--color-on-ink);
+}
+
+.blockTitle {
+  display: block;
+  margin: 0 0 0.04em -0.04em;
+  font-size: 30cqi;
+  font-weight: var(--weight-display);
+  font-stretch: var(--width-display);
+  line-height: 1.15;
+  letter-spacing: var(--tracking-display);
+  white-space: nowrap;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-cursor);
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-full);
+  pointer-events: none;
+}

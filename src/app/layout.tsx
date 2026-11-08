@@ -19,7 +19,8 @@ const plexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Wael Ettazi',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  title: { default: 'Wael Ettazi', template: '%s | Wael Ettazi' },
 }
 
 export default function RootLayout({
