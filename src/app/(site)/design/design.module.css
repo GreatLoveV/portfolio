@@ -1,0 +1,25 @@
+.page {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-7) var(--section-gap);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.intro {
+  max-width: 26rem;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: var(--space-3);
+}
