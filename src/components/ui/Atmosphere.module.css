@@ -1,0 +1,66 @@
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-vignette);
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 42%, transparent 68%, var(--vignette) 100%);
+}
+
+.grain {
+  position: fixed;
+  inset: -180px;
+  z-index: var(--z-grain);
+  pointer-events: none;
+  background-image: url('/textures/grain.png');
+  background-size: 180px;
+  opacity: var(--grain-opacity);
+  will-change: transform;
+  animation: flicker 900ms steps(1) infinite;
+}
+
+/* Jumps between fixed offsets, like successive frames of film. */
+@keyframes flicker {
+  0% {
+    transform: translate(0, 0);
+  }
+  17% {
+    transform: translate(-61px, 37px);
+  }
+  33% {
+    transform: translate(43px, -83px);
+  }
+  50% {
+    transform: translate(-97px, -29px);
+  }
+  67% {
+    transform: translate(71px, 53px);
+  }
+  83% {
+    transform: translate(-23px, 89px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain {
+    animation: none;
+  }
+}
+
+.leak {
+  position: absolute;
+  inset-block: 0;
+  width: min(38vw, 32rem);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  mask-image: linear-gradient(to bottom, transparent, black 25%, black 55%, transparent);
+}
+
+.right {
+  right: 0;
+  background: linear-gradient(to left, var(--leak), transparent 85%);
+}
+
+.left {
+  left: 0;
+  background: linear-gradient(to right, var(--leak), transparent 85%);
+}

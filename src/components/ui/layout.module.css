@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-gap);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--grid-gap);
+}
+
+.cell {
+  min-width: 0;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .cell {
+    grid-column: var(--cell-start) / span var(--cell-span);
+  }
+}

@@ -1,0 +1,43 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--color-ground);
+}
+
+.paper {
+  --duotone-light: var(--color-paper);
+}
+
+.ink {
+  --duotone-light: var(--color-ink);
+}
+
+.image {
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.25) brightness(0.95);
+}
+
+/* Maps shadows to the ground colour */
+.frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: var(--color-ground);
+  mix-blend-mode: lighten;
+  pointer-events: none;
+}
+
+/* Maps highlights to the chosen ink, then adds print grain */
+.frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-color: var(--duotone-light);
+  background-image: url('/textures/grain.png');
+  background-size: 180px;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
