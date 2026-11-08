@@ -1,0 +1,466 @@
+{
+  "color": {
+    "ground-sunken": {
+      "$value": "#0E0A07",
+      "$type": "color",
+      "$description": "Inputs",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "ground": {
+      "$value": "#16100C",
+      "$type": "color",
+      "$description": "Page",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "ground-raised": {
+      "$value": "#211A14",
+      "$type": "color",
+      "$description": "Raised surfaces",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "ground-high": {
+      "$value": "#2E261E",
+      "$type": "color",
+      "$description": "Disabled states",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "paper": {
+      "$value": "#E5D8C6",
+      "$type": "color",
+      "$description": "Text",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "paper-muted": {
+      "$value": "#B8A692",
+      "$type": "color",
+      "$description": "Secondary text",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "ink": {
+      "$value": "#D5AF41",
+      "$type": "color",
+      "$description": "Action, focus, print offset",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "ink-deep": {
+      "$value": "#927232",
+      "$type": "color",
+      "$description": "Ochre shadow tone",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "on-ink": {
+      "$value": "#16100C",
+      "$type": "color",
+      "$description": "Page",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "high"
+        }
+      }
+    },
+    "line": {
+      "$value": "#3A3026",
+      "$type": "color",
+      "$description": "Dividers",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "line-control": {
+      "$value": "#7A6A58",
+      "$type": "color",
+      "$description": "Form controls",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "error": {
+      "$value": "#E8957F",
+      "$type": "color",
+      "$description": "Form errors",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    },
+    "success": {
+      "$value": "#AEB886",
+      "$type": "color",
+      "$description": "Form success",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter",
+          "confidence": "medium"
+        }
+      }
+    }
+  },
+  "typography": {
+    "font-family": {
+      "display": {
+        "$value": "Archivo, sans-serif",
+        "$type": "fontFamily",
+        "$description": "Hero title",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption-mono": {
+        "$value": "IBM Plex Mono, monospace",
+        "$type": "fontFamily",
+        "$description": "Stack tags, dates, metadata",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "font-size": {
+      "display": {
+        "$value": "240px",
+        "$type": "dimension",
+        "$description": "Hero title",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "heading": {
+        "$value": "80px",
+        "$type": "dimension",
+        "$description": "Section titles",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "body": {
+        "$value": "17px",
+        "$type": "dimension",
+        "$description": "Reading text",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption-mono": {
+        "$value": "13px",
+        "$type": "dimension",
+        "$description": "Stack tags, dates, metadata",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "font-weight": {
+      "display": {
+        "$value": 800,
+        "$type": "fontWeight",
+        "$description": "Hero title",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "heading": {
+        "$value": 700,
+        "$type": "fontWeight",
+        "$description": "Section titles",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "body": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "$description": "Reading text",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption-mono": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "$description": "Stack tags, dates, metadata",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "line-height": {
+      "display": {
+        "$value": 0.88,
+        "$type": "number",
+        "$description": "Hero title",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "heading": {
+        "$value": 1,
+        "$type": "number",
+        "$description": "Section titles",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "body": {
+        "$value": 1.6,
+        "$type": "number",
+        "$description": "Reading text",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "caption-mono": {
+        "$value": 1.4,
+        "$type": "number",
+        "$description": "Stack tags, dates, metadata",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    },
+    "letter-spacing": {
+      "display": {
+        "$value": "-0.025em",
+        "$type": "dimension",
+        "$description": "Hero title",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      },
+      "heading": {
+        "$value": "-0.015em",
+        "$type": "dimension",
+        "$description": "Section titles",
+        "$extensions": {
+          "anydesign": {
+            "source": "design.md frontmatter"
+          }
+        }
+      }
+    }
+  },
+  "spacing": {
+    "base": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "4": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "8": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "12": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "16": {
+      "$value": "16px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "24": {
+      "$value": "24px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "32": {
+      "$value": "32px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "48": {
+      "$value": "48px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "64": {
+      "$value": "64px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "96": {
+      "$value": "96px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "128": {
+      "$value": "128px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "192": {
+      "$value": "192px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    }
+  },
+  "radius": {
+    "none": {
+      "$value": "0px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "sm": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    },
+    "full": {
+      "$value": "999px",
+      "$type": "dimension",
+      "$extensions": {
+        "anydesign": {
+          "source": "design.md frontmatter"
+        }
+      }
+    }
+  },
+  "$extensions": {
+    "anydesign": {
+      "source": "design-refs (5 local poster and cover images)",
+      "captured_at": "2026-11-08",
+      "method": "generated from design.md by scripts/build_tokens_json.py",
+      "spec": "W3C Design Tokens Community Group 2025.10"
+    }
+  }
+}

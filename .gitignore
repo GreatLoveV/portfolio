@@ -44,3 +44,6 @@ next-env.d.ts
 # local scratch output
 /screenshots/
 __pycache__/
+
+# reference images (third-party posters, not for publishing)
+/design-refs/
