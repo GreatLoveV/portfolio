@@ -33,6 +33,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     authorized({ auth: session, request }) {
       if (request.nextUrl.pathname === '/admin/login') return true
+      // A proxy redirect can't be read by a Server Action call, so a save with an
+      // expired session would hang. Every action starts with requireAdmin(), which
+      // refuses the request and redirects in a way the client can follow.
+      if (request.method === 'POST' && request.headers.has('next-action')) return true
       return isAdminGithubId(session?.user?.githubId)
     },
   },
