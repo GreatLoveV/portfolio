@@ -1,0 +1,128 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-8);
+  min-height: calc(100svh - 6rem);
+  padding-block: var(--space-7) var(--space-8);
+}
+
+/* The one moment: the ochre layer slides into register as the title is printed */
+.title {
+  max-width: 14em;
+  overflow-wrap: break-word;
+  animation: print var(--duration-reveal) var(--ease-settle) backwards;
+}
+
+@keyframes print {
+  from {
+    clip-path: inset(0 0 100% 0);
+    text-shadow: 0.09em 0.05em 0 var(--color-ink);
+  }
+
+  to {
+    clip-path: inset(-10% -5% -10% -5%);
+    text-shadow: var(--misregister-x) var(--misregister-y) 0 var(--color-ink);
+  }
+}
+
+.heroFoot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 34rem;
+  margin-left: auto;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  color: var(--color-paper-muted);
+}
+
+.mark {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.workTitle {
+  margin-bottom: var(--space-8);
+}
+
+.project {
+  display: block;
+  text-decoration: none;
+}
+
+.project:hover {
+  color: inherit;
+}
+
+.projectTitle {
+  margin-top: var(--space-5);
+  text-decoration: underline transparent 2px;
+  text-underline-offset: 0.12em;
+  transition: text-decoration-color var(--duration-base) var(--ease-settle);
+}
+
+.project:hover .projectTitle {
+  text-decoration-color: var(--color-ink);
+}
+
+.projectSummary {
+  margin-block: var(--space-3);
+}
+
+.allLink {
+  display: inline-block;
+  margin-top: var(--space-8);
+  padding-block: var(--space-3);
+  font-size: var(--text-lead);
+}
+
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+.teaser {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-lead);
+  line-height: 1.4;
+}
+
+.ctaTitle {
+  max-width: 11em;
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 47.99rem) {
+  .project {
+    margin-bottom: var(--space-6);
+  }
+
+  .heroFoot {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 48rem) {
+  .dropped {
+    margin-top: var(--space-10);
+  }
+
+  .lifted {
+    margin-top: var(--space-8);
+  }
+}
