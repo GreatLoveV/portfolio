@@ -25,8 +25,8 @@ export default function DesignPage() {
           <Cell span={5} className={styles.copy}>
             <Display size="h1">Design</Display>
             <Text size="lead" className={styles.intro}>
-              Graphic design is the other half of how I build for the web. It&apos;s where
-              I learned to care about grain, weight and what to leave out.
+              Graphic design is the other half of how I build for the web. It&rsquo;s
+              where I learned to care about grain, weight and what to leave out.
             </Text>
           </Cell>
           <Cell span={6} start={7}>
@@ -36,6 +36,7 @@ export default function DesignPage() {
                 alt="An antlered figure on a background of cracked ochre wood."
                 sizes="(min-width: 48rem) 50vw, 100vw"
                 placeholder="blur"
+                priority
                 className={styles.image}
               />
             </Reveal>
