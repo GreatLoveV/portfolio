@@ -17,7 +17,7 @@ export default function NotFound() {
       <SiteNav />
       <main id="content">
         <Container className={styles.page}>
-          <Display size="h1">This page doesn&apos;t exist.</Display>
+          <Display size="h1">This page doesn&rsquo;t exist.</Display>
           <Text size="lead" className={styles.text}>
             The link may be old or mistyped.
           </Text>

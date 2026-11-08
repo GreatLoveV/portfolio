@@ -16,6 +16,11 @@
   gap: var(--space-4);
 }
 
+.note {
+  font-size: var(--text-small);
+  color: var(--color-paper-muted);
+}
+
 .error {
   color: var(--color-error);
 }

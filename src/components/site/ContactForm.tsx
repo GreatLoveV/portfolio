@@ -59,6 +59,7 @@ export function ContactForm({ action }: ContactFormProps) {
           <input type="text" name="company" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
+      <p className={styles.note}>I only use your details to reply to you.</p>
       <div className={styles.foot}>
         <Button type="submit" disabled={pending}>
           {pending ? 'Sending' : 'Send message'}
