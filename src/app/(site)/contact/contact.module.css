@@ -1,0 +1,11 @@
+.page {
+  padding-block: var(--space-7) var(--section-gap);
+}
+
+.intro {
+  margin-block: var(--space-5);
+}
+
+.fact {
+  margin-top: var(--space-2);
+}

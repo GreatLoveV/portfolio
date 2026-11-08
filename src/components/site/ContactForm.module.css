@@ -1,0 +1,27 @@
+.form {
+  position: relative;
+  display: grid;
+  gap: var(--space-5);
+}
+
+.trap {
+  position: absolute;
+  left: -9999px;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.sent {
+  font-size: var(--text-lead);
+  line-height: 1.4;
+  color: var(--color-success);
+}

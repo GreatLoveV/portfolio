@@ -129,6 +129,16 @@ export const experienceSchema = z
     error: 'The end date must be after the start date.',
   })
 
+export const contactSchema = z.object({
+  name: z.string().trim().min(1, 'Enter your name.').max(120, 'That name is too long.'),
+  email: z.email('Enter a full email address, like name@example.com.').max(254),
+  body: z
+    .string()
+    .trim()
+    .min(10, 'Write at least a sentence so I know how to help.')
+    .max(5000, 'Keep your message under 5000 characters.'),
+})
+
 export const settingsSchema = z.object({
   heroTitle: z.string().trim().min(1, 'Enter a hero title.').max(200),
   heroSubtitle: z.string().trim().min(1, 'Enter a hero subtitle.').max(400),
