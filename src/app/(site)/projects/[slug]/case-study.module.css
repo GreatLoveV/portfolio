@@ -75,6 +75,12 @@
   text-decoration-color: var(--color-ink);
 }
 
+@media (max-width: 47.99rem) {
+  .factsCell {
+    margin-bottom: var(--space-6);
+  }
+}
+
 @media (min-width: 48rem) {
   .factsCell {
     position: sticky;
