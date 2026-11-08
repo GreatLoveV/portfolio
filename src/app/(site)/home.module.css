@@ -26,6 +26,44 @@
   }
 }
 
+/* Desktop only: phones and tablets have no empty corner to fill */
+.heroArt {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .heroBase {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-8);
+  }
+
+  .heroArt {
+    position: relative;
+    display: block;
+    flex: 0 1 38%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    animation: heroArtIn var(--duration-reveal) var(--ease-sweep) 300ms backwards;
+  }
+}
+
+@keyframes heroArtIn {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  to {
+    clip-path: inset(0);
+  }
+}
+
+.heroArtImage {
+  object-fit: cover;
+  object-position: 50% 34%;
+}
+
 .heroFoot {
   display: flex;
   flex-direction: column;

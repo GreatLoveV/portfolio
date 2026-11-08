@@ -1,5 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
+import specimen from '@/app/styleguide/specimen.png'
 import { Markdown } from '@/components/Markdown'
 import { ProjectCover } from '@/components/site/ProjectCover'
 import { Reveal } from '@/components/site/Reveal'
@@ -42,19 +44,30 @@ export default async function HomePage() {
         <Display size="h1" className={styles.title}>
           {settings.heroTitle}
         </Display>
-        <div className={styles.heroFoot}>
-          {settings.availability && (
-            <p className={styles.availability}>
-              <span className={styles.mark} aria-hidden="true" />
-              {settings.availability}
-            </p>
-          )}
-          <Text size="lead">{settings.heroSubtitle}</Text>
-          <div className={styles.actions}>
-            <Button href="/projects">See the projects</Button>
-            <Button href="/contact" variant="secondary">
-              Get in touch
-            </Button>
+        <div className={styles.heroBase}>
+          <Link href="/design" className={styles.heroArt}>
+            <Image
+              src={specimen}
+              alt="See my design work"
+              fill
+              sizes="38vw"
+              className={styles.heroArtImage}
+            />
+          </Link>
+          <div className={styles.heroFoot}>
+            {settings.availability && (
+              <p className={styles.availability}>
+                <span className={styles.mark} aria-hidden="true" />
+                {settings.availability}
+              </p>
+            )}
+            <Text size="lead">{settings.heroSubtitle}</Text>
+            <div className={styles.actions}>
+              <Button href="/projects">See the projects</Button>
+              <Button href="/contact" variant="secondary">
+                Get in touch
+              </Button>
+            </div>
           </div>
         </div>
       </Container>
