@@ -74,6 +74,24 @@ export const experience = pgTable(
   (t) => [index('experience_sort_idx').on(t.sortOrder)],
 )
 
+/** Graphic design pieces. Width and height keep each image's own proportions in the gallery. */
+export const designs = pgTable(
+  'designs',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    title: text('title').notNull(),
+    caption: text('caption').notNull().default(''),
+    alt: text('alt').notNull(),
+    imageUrl: text('image_url').notNull(),
+    width: integer('width').notNull(),
+    height: integer('height').notNull(),
+    sortOrder: integer('sort_order').notNull().default(0),
+    published: boolean('published').notNull().default(true),
+    ...timestamps,
+  },
+  (t) => [index('designs_sort_idx').on(t.published, t.sortOrder)],
+)
+
 /** Single row, enforced by the check constraint on id. */
 export const siteSettings = pgTable(
   'site_settings',

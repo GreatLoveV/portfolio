@@ -8,6 +8,7 @@ import styles from './admin.module.css'
 const links = [
   { href: '/admin', label: 'Dashboard' },
   { href: '/admin/projects', label: 'Projects' },
+  { href: '/admin/designs', label: 'Designs' },
   { href: '/admin/experience', label: 'Experience' },
   { href: '/admin/settings', label: 'Site settings' },
   { href: '/admin/messages', label: 'Messages' },

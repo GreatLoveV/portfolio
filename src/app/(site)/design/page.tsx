@@ -5,7 +5,8 @@ import { Reveal } from '@/components/site/Reveal'
 import { LightLeak } from '@/components/ui/Atmosphere'
 import { Cell, Container, Grid } from '@/components/ui/layout'
 import { Display, Meta, Text } from '@/components/ui/type'
-import { pageMetadata } from '@/lib/content'
+import { DesignGallery } from '@/components/site/DesignGallery'
+import { getPublishedDesigns, pageMetadata } from '@/lib/content'
 
 import styles from './design.module.css'
 
@@ -16,7 +17,11 @@ export const generateMetadata = () =>
     path: '/design',
   })
 
-export default function DesignPage() {
+export const revalidate = 3600
+
+export default async function DesignPage() {
+  const designs = await getPublishedDesigns()
+
   return (
     <div className={styles.page}>
       <LightLeak side="left" />
@@ -25,8 +30,8 @@ export default function DesignPage() {
           <Cell span={5} className={styles.copy}>
             <Display size="h1">Design</Display>
             <Text size="lead" className={styles.intro}>
-              Graphic design is the other half of how I build for the web. It&rsquo;s
-              where I learned to care about grain, weight and what to leave out.
+              Graphic design is how I think about the web: contrast, grain, and knowing
+              what to leave out. This is the work I make for myself, outside any brief.
             </Text>
           </Cell>
           <Cell span={6} start={7}>
@@ -45,6 +50,13 @@ export default function DesignPage() {
             </Meta>
           </Cell>
         </Grid>
+        {designs.length > 0 && (
+          <section className={styles.gallery} aria-label="Selected designs">
+            <Reveal>
+              <DesignGallery items={designs} />
+            </Reveal>
+          </section>
+        )}
       </Container>
     </div>
   )

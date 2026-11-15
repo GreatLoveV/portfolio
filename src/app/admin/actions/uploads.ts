@@ -3,6 +3,7 @@
 import { randomUUID } from 'node:crypto'
 
 import { put } from '@vercel/blob'
+import sharp from 'sharp'
 
 import { requireAdmin } from '@/lib/guard'
 
@@ -61,5 +62,26 @@ export async function uploadFile(
   } catch (error) {
     console.error('Upload failed', error)
     return { error: 'The upload failed. Try again.' }
+  }
+}
+
+export type DesignUploadResult =
+  { url: string; width: number; height: number } | { error: string }
+
+/** Uploads a design image and reads its pixel size, so the gallery keeps its proportions. */
+export async function uploadDesignImage(formData: FormData): Promise<DesignUploadResult> {
+  const uploaded = await uploadFile('image', formData)
+  if ('error' in uploaded) return uploaded
+
+  try {
+    const file = formData.get('file') as File
+    const { width, height, pages } = await sharp(await file.arrayBuffer()).metadata()
+    // Animated WebP reports every frame stacked, so take one frame's height.
+    const frameHeight = height && pages ? Math.round(height / pages) : height
+    if (!width || !frameHeight) throw new Error('No dimensions')
+    return { url: uploaded.url, width, height: frameHeight }
+  } catch (error) {
+    console.error('Reading image size failed', error)
+    return { error: 'That image could not be read. Try another file.' }
   }
 }

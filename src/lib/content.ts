@@ -3,9 +3,10 @@ import type { Metadata } from 'next'
 import { cache } from 'react'
 
 import { db } from '@/db'
-import { experience, projects, siteSettings } from '@/db/schema'
+import { designs, experience, projects, siteSettings } from '@/db/schema'
 
 export type Project = typeof projects.$inferSelect
+export type Design = typeof designs.$inferSelect
 export type ExperienceEntry = typeof experience.$inferSelect
 
 /** How long a public page may be served before it is rebuilt. Saves in /admin refresh it at once. */
@@ -53,6 +54,14 @@ export const getPublishedProject = cache(async (slug: string) => {
     .limit(1)
   return row ?? null
 })
+
+export const getPublishedDesigns = cache(async () =>
+  db
+    .select()
+    .from(designs)
+    .where(eq(designs.published, true))
+    .orderBy(asc(designs.sortOrder)),
+)
 
 export const getExperience = cache(async () =>
   db.select().from(experience).orderBy(asc(experience.sortOrder)),

@@ -23,3 +23,7 @@
 .caption {
   margin-top: var(--space-3);
 }
+
+.gallery {
+  margin-top: var(--section-gap);
+}

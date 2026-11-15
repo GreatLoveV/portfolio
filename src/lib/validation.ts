@@ -129,6 +129,28 @@ export const experienceSchema = z
     error: 'The end date must be after the start date.',
   })
 
+export const designSchema = z.object({
+  title: z.string().trim().min(1, 'Enter a title.').max(120),
+  caption: z.string().trim().max(300),
+  alt: z
+    .string()
+    .trim()
+    .min(1, 'Describe the image for people who cannot see it.')
+    .max(300),
+  imageUrl: z.string().refine(isBlobUrl, { error: 'Upload an image first.' }),
+  width: z.coerce.number().int().min(1).max(20_000),
+  height: z.coerce.number().int().min(1).max(20_000),
+  sortOrder: z.coerce
+    .number({ error: 'Enter a whole number.' })
+    .int('Enter a whole number.')
+    .min(0, 'Use 0 or higher.')
+    .max(9999),
+  published: z
+    .literal('on')
+    .optional()
+    .transform((value) => value === 'on'),
+})
+
 export const contactSchema = z.object({
   name: z.string().trim().min(1, 'Enter your name.').max(120, 'That name is too long.'),
   email: z.email('Enter a full email address, like name@example.com.').max(254),

@@ -367,3 +367,17 @@
     margin-top: auto;
   }
 }
+
+.designPreview {
+  width: auto;
+  max-width: min(20rem, 100%);
+  height: auto;
+  max-height: 24rem;
+  background-color: var(--color-ground-raised);
+}
+
+/* The admin keeps plain underlined links: it is a tool, not a showpiece */
+.main a:not([class]) {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
