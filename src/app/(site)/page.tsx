@@ -5,11 +5,17 @@ import specimen from '@/app/styleguide/specimen.png'
 import { Markdown } from '@/components/Markdown'
 import { ProjectCover } from '@/components/site/ProjectCover'
 import { Reveal } from '@/components/site/Reveal'
+import { SideArt } from '@/components/site/SideArt'
 import { LightLeak } from '@/components/ui/Atmosphere'
 import { Button } from '@/components/ui/Button'
 import { Cell, Container, Grid, Section } from '@/components/ui/layout'
 import { Display, Heading, Meta, Text } from '@/components/ui/type'
-import { getPublishedProjects, getSettings, pageMetadata } from '@/lib/content'
+import {
+  getPublishedDesigns,
+  getPublishedProjects,
+  getSettings,
+  pageMetadata,
+} from '@/lib/content'
 
 import styles from './home.module.css'
 
@@ -34,7 +40,11 @@ const placements = [
 ]
 
 export default async function HomePage() {
-  const [settings, projects] = await Promise.all([getSettings(), getPublishedProjects()])
+  const [settings, projects, designs] = await Promise.all([
+    getSettings(),
+    getPublishedProjects(),
+    getPublishedDesigns(),
+  ])
   const featured = projects.filter((project) => project.featured).slice(0, 3)
   const teaser = settings.aboutBody.split(/\n\s*\n/)[0]
 
@@ -73,7 +83,7 @@ export default async function HomePage() {
       </Container>
 
       {featured.length > 0 && (
-        <Section>
+        <Section className={styles.work}>
           <Container>
             <Heading className={styles.workTitle}>Selected projects</Heading>
             <Grid>
@@ -108,7 +118,7 @@ export default async function HomePage() {
                 )
               })}
             </Grid>
-            <Link href="/projects" className={styles.allLink}>
+            <Link href="/projects" className={`${styles.allLink} ink-link`}>
               All projects
             </Link>
           </Container>
@@ -119,13 +129,18 @@ export default async function HomePage() {
         <Section className={styles.about}>
           <LightLeak side="left" />
           <Container>
-            <Grid>
-              <Cell span={7} start={6}>
+            <Grid className={styles.aboutGrid}>
+              <Cell span={5}>
+                <SideArt design={designs[1] ?? designs[0]} ratio="3 / 2" />
+              </Cell>
+              <Cell span={7} start={6} className={styles.aboutText}>
                 <Reveal>
                   <div className={styles.teaser}>
                     <Markdown>{teaser}</Markdown>
                   </div>
-                  <Link href="/about">More about me</Link>
+                  <Link href="/about" className="ink-link">
+                    More about me
+                  </Link>
                 </Reveal>
               </Cell>
             </Grid>
@@ -133,11 +148,11 @@ export default async function HomePage() {
         </Section>
       )}
 
-      <Section>
+      <Section className={styles.cta}>
         <Container>
           <Reveal>
             <Heading className={styles.ctaTitle}>
-              Hiring, or have a site to build?
+              Looking for an intern or a junior developer? Let&rsquo;s talk.
             </Heading>
             <Button href="/contact">Send me a message</Button>
           </Reveal>

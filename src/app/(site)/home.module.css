@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--space-8);
+  gap: var(--space-6);
   min-height: calc(100svh - 6rem);
-  padding-block: var(--space-7) var(--space-8);
+  padding-block: var(--space-7) var(--space-7);
 }
 
 /* The one moment: the ochre layer slides into register as the title is printed */
@@ -32,18 +32,27 @@
 }
 
 @media (min-width: 64rem) {
+  /* Two fractions of one row: the picture and the text box share its full width and
+     the same height, with nothing left over on either side */
   .heroBase {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--space-8);
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--grid-gap);
+    align-items: stretch;
+  }
+
+  .heroBase .heroFoot {
+    max-width: none;
+    margin-left: 0;
+    justify-content: center;
+    gap: var(--space-7);
+    padding-left: var(--space-5);
   }
 
   .heroArt {
     position: relative;
     display: block;
-    flex: 0 1 38%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
     animation: heroArtIn var(--duration-reveal) var(--ease-sweep) 300ms backwards;
   }
@@ -61,7 +70,7 @@
 
 .heroArtImage {
   object-fit: cover;
-  object-position: 50% 34%;
+  object-position: 50% 50%;
 }
 
 .heroFoot {
@@ -109,13 +118,11 @@
 
 .projectTitle {
   margin-top: var(--space-5);
-  text-decoration: underline transparent 2px;
-  text-underline-offset: 0.12em;
-  transition: text-decoration-color var(--duration-base) var(--ease-settle);
+  transition: color var(--duration-base) var(--ease-settle);
 }
 
 .project:hover .projectTitle {
-  text-decoration-color: var(--color-ink);
+  color: var(--color-ink);
 }
 
 .projectSummary {
@@ -124,14 +131,34 @@
 
 .allLink {
   display: inline-block;
-  margin-top: var(--space-8);
+  margin-top: var(--space-7);
   padding-block: var(--space-3);
   font-size: var(--text-lead);
 }
 
-.about {
+.about.about {
   position: relative;
   overflow: hidden;
+  /* The projects above and the closing line below sit close to this section */
+  padding-block: 0;
+}
+
+.aboutGrid {
+  align-items: stretch;
+}
+
+/* Beside the picture on desktop: same height, text centred in it */
+@media (min-width: 64rem) {
+  .aboutText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: var(--space-5);
+  }
+
+  .aboutText > div {
+    width: 100%;
+  }
 }
 
 .about a {
@@ -140,7 +167,7 @@
 }
 
 .teaser {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);
   font-size: var(--text-lead);
   line-height: 1.4;
 }
@@ -162,10 +189,18 @@
 
 @media (min-width: 48rem) {
   .dropped {
-    margin-top: var(--space-10);
+    margin-top: var(--space-9);
   }
 
   .lifted {
-    margin-top: var(--space-8);
+    margin-top: var(--space-7);
   }
+}
+
+.work.work {
+  padding-bottom: 2.375rem; /* 38px gap above the about section */
+}
+
+.cta.cta {
+  padding-top: var(--space-7);
 }

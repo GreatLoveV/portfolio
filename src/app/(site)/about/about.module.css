@@ -4,7 +4,8 @@
 
 .intro.intro {
   position: relative;
-  overflow: hidden;
+  /* clip, not hidden: hidden would stop the side artwork sticking while you read */
+  overflow: clip;
   padding-block: var(--space-8);
 }
 
@@ -68,4 +69,14 @@
   .entryBody {
     grid-column: 6 / span 7;
   }
+}
+
+/* The biography is the page's main read, so it sets at the lead size, not body size */
+.aboutText {
+  font-size: var(--text-lead);
+  line-height: 1.5;
+}
+
+.aboutText > * + * {
+  margin-top: var(--space-6);
 }

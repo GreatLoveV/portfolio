@@ -1,10 +1,12 @@
 import { Markdown } from '@/components/Markdown'
 import { Reveal } from '@/components/site/Reveal'
+import { SideArt } from '@/components/site/SideArt'
 import { LightLeak } from '@/components/ui/Atmosphere'
 import { Cell, Container, Grid, Section } from '@/components/ui/layout'
 import { Display, Heading, Meta, Text } from '@/components/ui/type'
 import {
   getExperience,
+  getPublishedDesigns,
   getPublishedProjects,
   getSettings,
   pageMetadata,
@@ -33,10 +35,11 @@ const formatRange = (start: string, end: string | null) =>
   `${month.format(new Date(start))} to ${end ? month.format(new Date(end)) : 'present'}`
 
 export default async function AboutPage() {
-  const [settings, entries, projects] = await Promise.all([
+  const [settings, entries, projects, designs] = await Promise.all([
     getSettings(),
     getExperience(),
     getPublishedProjects(),
+    getPublishedDesigns(),
   ])
   const skills = [...new Set(projects.flatMap(({ stack }) => stack))].sort((a, b) =>
     a.localeCompare(b),
@@ -55,13 +58,20 @@ export default async function AboutPage() {
             <Cell span={4} className={styles.side}>
               {settings.availability && <Meta as="p">{settings.availability}</Meta>}
               {settings.cvUrl && (
-                <a href={settings.cvUrl} className={styles.cv} download>
+                <a
+                  href={settings.cvUrl}
+                  className={`${styles.cv} ink-link ink-link-text`}
+                  download
+                >
                   Download my CV (PDF)
                 </a>
               )}
+              <SideArt design={designs[0]} fill />
             </Cell>
             <Cell span={7} start={6}>
-              <Markdown>{settings.aboutBody}</Markdown>
+              <div className={styles.aboutText}>
+                <Markdown>{settings.aboutBody}</Markdown>
+              </div>
             </Cell>
           </Grid>
         </Container>

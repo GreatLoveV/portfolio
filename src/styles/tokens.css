@@ -80,7 +80,7 @@
   --grid-gap: clamp(1rem, 0.6rem + 1.5vw, 2rem);
   --page-max: 100rem;
   --measure: 65ch;
-  --section-gap: clamp(5rem, 3rem + 9vw, 12rem);
+  --section-gap: clamp(3.5rem, 2rem + 5vw, 7rem);
 
   /* Radii: print has hard edges. Full is for round status marks only. */
   --radius-none: 0;

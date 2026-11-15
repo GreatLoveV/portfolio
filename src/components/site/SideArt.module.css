@@ -1,0 +1,41 @@
+/* Phones and tablets stack their columns, so there is no empty side to fill. */
+.wrap {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .wrap {
+    display: block;
+    width: 100%;
+  }
+
+  /* Grows to the full height of its column, so it ends where the text beside it ends */
+  .fill {
+    flex: 1 1 auto;
+    min-height: 24rem;
+  }
+
+  .fill > div,
+  .fill > div > div,
+  .fill .link {
+    height: 100%;
+  }
+
+  .sticky {
+    position: sticky;
+    top: var(--space-8);
+  }
+}
+
+.wrap .link {
+  position: relative;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-ground-sunken);
+}
+
+.image {
+  object-fit: cover;
+  object-position: 50% 30%;
+}
