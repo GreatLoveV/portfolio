@@ -66,13 +66,11 @@
 
 .nextTitle {
   margin-top: var(--space-3);
-  text-decoration: underline transparent 2px;
-  text-underline-offset: 0.12em;
-  transition: text-decoration-color var(--duration-base) var(--ease-settle);
+  transition: color var(--duration-base) var(--ease-settle);
 }
 
 .next:hover .nextTitle {
-  text-decoration-color: var(--color-ink);
+  color: var(--color-ink);
 }
 
 @media (max-width: 47.99rem) {

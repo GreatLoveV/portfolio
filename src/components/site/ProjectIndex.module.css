@@ -4,24 +4,23 @@
 
 .tags {
   display: flex;
+  margin-left: calc(var(--space-3) * -1);
   flex-wrap: wrap;
-  gap: var(--space-1) var(--space-4);
+  gap: var(--space-1) var(--space-2);
 }
 
 .tag {
   min-height: 2.75rem;
-  padding: var(--space-2) 0;
+  padding: var(--space-2) var(--space-3);
   border: 0;
   background: none;
   font-family: var(--font-mono);
   font-size: var(--text-meta);
   color: var(--color-paper-muted);
-  text-decoration: underline transparent 2px;
-  text-underline-offset: 0.3em;
   cursor: pointer;
   transition:
-    color var(--duration-fast) var(--ease-settle),
-    text-decoration-color var(--duration-fast) var(--ease-settle);
+    background-color var(--duration-fast) var(--ease-settle),
+    color var(--duration-fast) var(--ease-settle);
 }
 
 .tag:hover {
@@ -29,8 +28,8 @@
 }
 
 .tag[aria-pressed='true'] {
-  color: var(--color-paper);
-  text-decoration-color: var(--color-ink);
+  background-color: var(--color-ink);
+  color: var(--color-on-ink);
 }
 
 .item {
@@ -49,13 +48,11 @@
 }
 
 .title {
-  text-decoration: underline transparent 2px;
-  text-underline-offset: 0.12em;
-  transition: text-decoration-color var(--duration-base) var(--ease-settle);
+  transition: color var(--duration-base) var(--ease-settle);
 }
 
 .row:hover .title {
-  text-decoration-color: var(--color-ink);
+  color: var(--color-ink);
 }
 
 .summary {

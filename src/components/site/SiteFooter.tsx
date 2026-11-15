@@ -23,7 +23,9 @@ export async function SiteFooter() {
           <ul role="list" className={styles.footerLinks}>
             {links.map(({ href, label }) => (
               <li key={label}>
-                <a href={href}>{label}</a>
+                <a href={href} className="ink-link">
+                  {label}
+                </a>
               </li>
             ))}
           </ul>

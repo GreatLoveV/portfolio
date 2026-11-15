@@ -58,14 +58,49 @@ button {
 
 a {
   color: inherit;
-  text-decoration-line: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  text-decoration: none;
   transition: color var(--duration-fast) var(--ease-settle);
 }
 
 a:hover {
   color: var(--color-ink);
+}
+
+/*
+ * Text links print in ochre: a block of ink wipes in from the left behind the word
+ * and the word turns dark, like a stamp landing. It leaves on hover-out the same way.
+ * Add .ink-link-text for links inside running text, which rest in ochre so they read as links.
+ */
+.ink-link {
+  padding-inline: 0.2em;
+  margin-inline: -0.2em;
+  background-image: linear-gradient(var(--color-ink), var(--color-ink));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 100%;
+  background-origin: content-box;
+  background-clip: content-box;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition:
+    background-size var(--duration-base) var(--ease-sweep),
+    color var(--duration-fast) var(--ease-settle);
+}
+
+.ink-link:hover,
+.ink-link:focus-visible {
+  background-size: 100% 100%;
+  color: var(--color-on-ink);
+}
+
+.ink-link-text {
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ink-link {
+    transition: color var(--duration-fast) linear;
+  }
 }
 
 :focus-visible {

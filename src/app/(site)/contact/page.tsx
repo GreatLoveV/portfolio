@@ -24,7 +24,8 @@ export default async function ContactPage() {
         <Cell span={5}>
           <Display size="h1">Contact</Display>
           <Text size="lead" className={styles.intro}>
-            Tell me about the role or the project. English or French is fine.
+            Hiring an intern or a junior developer, or have a small site to build? Tell me
+            about it, in English, Arabic or French, and I&rsquo;ll get back to you.
           </Text>
           {availability && (
             <Meta as="p" className={styles.fact}>
@@ -33,7 +34,9 @@ export default async function ContactPage() {
           )}
           {socialLinks.email && (
             <p className={styles.fact}>
-              <a href={`mailto:${socialLinks.email}`}>{socialLinks.email}</a>
+              <a href={`mailto:${socialLinks.email}`} className="ink-link ink-link-text">
+                {socialLinks.email}
+              </a>
             </p>
           )}
         </Cell>

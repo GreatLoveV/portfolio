@@ -45,15 +45,11 @@
   display: inline-block;
   padding-block: var(--space-3);
   font-size: var(--text-small);
-  text-decoration-color: transparent;
-  transition:
-    color var(--duration-fast) var(--ease-settle),
-    text-decoration-color var(--duration-fast) var(--ease-settle);
 }
 
-.navLink[aria-current='page'] {
-  text-decoration-color: var(--color-ink);
-  text-decoration-thickness: 2px;
+/* The current page keeps a thin ochre rule, which the hover wipe grows into a block */
+.navLink.navLink[aria-current='page']:not(:hover, :focus-visible) {
+  background-size: 100% 2px;
 }
 
 .footer {

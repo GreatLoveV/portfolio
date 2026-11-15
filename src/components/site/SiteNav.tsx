@@ -34,7 +34,7 @@ export function SiteNav() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={styles.navLink}
+                    className={`${styles.navLink} ink-link`}
                     aria-current={current ? 'page' : undefined}
                   >
                     {label}

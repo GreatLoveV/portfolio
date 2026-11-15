@@ -8,7 +8,17 @@ import styles from './Markdown.module.css'
 export function Markdown({ children }: { children: string }) {
   return (
     <div className={styles.prose}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeSanitize]}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeSanitize]}
+        components={{
+          a: ({ href, title, children: label }) => (
+            <a href={href} title={title} className="ink-link ink-link-text">
+              {label}
+            </a>
+          ),
+        }}
+      >
         {children}
       </ReactMarkdown>
     </div>

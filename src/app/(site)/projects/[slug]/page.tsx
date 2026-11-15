@@ -116,6 +116,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                     <dd className={styles.links}>
                       {project.liveUrl && (
                         <a
+                          className="ink-link ink-link-text"
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -125,6 +126,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
                       )}
                       {project.repoUrl && (
                         <a
+                          className="ink-link ink-link-text"
                           href={project.repoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
