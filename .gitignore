@@ -47,3 +47,5 @@ __pycache__/
 
 # reference images (third-party posters, not for publishing)
 /design-refs/
+
+# local tooling settings
